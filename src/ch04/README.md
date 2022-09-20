@@ -33,7 +33,7 @@
 ***4.4 Process States***
 
 <p align="center">
-<img src="../img/process-state-transitions.png" alt="figure-4.2" style="zoom: 80%;" />
+<img src="../img/process-state-transitions.png" alt="figure-4.2" style="zoom: 60%;" />
 </p>
 
 - 运行（running）：在运行状态下，进程正在处理器上运行。这意味着它正在执行
