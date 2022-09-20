@@ -40,9 +40,9 @@ int execvpe(const char *file, char *const argv[],
 
 ***5.4 Why? Motivating the API***
 
-以 UNIX shell 举例：这给了 shell 在 fork 之后 exec 之前运行代码的机会。
+- 以 UNIX shell 举例：这给了 shell 在 fork 之后 exec 之前运行代码的机会。
 
-> shell 也是一个用户程序，它首先显示一个提示符（prompt），然后等待用户输入。你可以向它输入一个命令（一个可执行程序的名称及需要的参数），大多数情况下，shell 可以在文件系统中找到这个可执行程序，调用 `fork()` 创建新进程，并调用 `exec()` 的某个变体来执行这个可执行程序，调用 `wait()` 等待该命令完成。子进程执行结束后，shell 从 `wait()` 返回并再次输出一个提示符，等待用户输入下一条命令。
+  > shell 也是一个用户程序，它首先显示一个提示符（prompt），然后等待用户输入。你可以向它输入一个命令（一个可执行程序的名称及需要的参数），大多数情况下，shell 可以在文件系统中找到这个可执行程序，调用 `fork()` 创建新进程，并调用 `exec()` 的某个变体来执行这个可执行程序，调用 `wait()` 等待该命令完成。子进程执行结束后，shell 从 `wait()` 返回并再次输出一个提示符，等待用户输入下一条命令。
 
 ***5.5 Other Parts of the API***
 
