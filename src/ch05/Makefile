@@ -1,4 +1,4 @@
-SRC := $(wildcard *.c)
+SRC := $(wildcard hw/*.c *.c)
 TAR := $(SRC:%.c=%)
 
 all: $(TAR)
