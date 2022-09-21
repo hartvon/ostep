@@ -32,6 +32,11 @@ int execvpe(const char *file, char *const argv[],
                 char *const envp[]);
 ```
 
+上述exec系列函数底层都是通过 `execve()` 系统调用实现
+```c
+int execve(const char *pathname, char *const argv[], char *const envp[]);
+```
+
 - 让子进程执行与父进程不同的程序，对 `exec()` 的成功调用永远不会返回。
 
   > `exec()` 会从可执行程序中加载代码和静态数据，并用它覆写自己的代码段（以及静态数据），堆、栈及其他内存空间也会被重新初始化。然后操作系统就执行该程序，将参数通过 argv 传递给该进程。
